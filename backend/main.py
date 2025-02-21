@@ -150,3 +150,8 @@ async def download_file(filename: str):
     if file_path.exists():
         return FileResponse(file_path, media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document", filename=filename)
     raise HTTPException(status_code=404, detail="File not found")
+
+
+# Vercel handler for deployment
+from mangum import Mangum
+handler = Mangum(app)
