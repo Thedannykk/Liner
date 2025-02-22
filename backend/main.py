@@ -152,6 +152,3 @@ async def download_file(filename: str):
     raise HTTPException(status_code=404, detail="File not found")
 
 
-# Vercel handler for deployment
-from mangum import Mangum
-handler = Mangum(app)
